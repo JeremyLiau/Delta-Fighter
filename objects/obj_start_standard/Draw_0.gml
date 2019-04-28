@@ -8,5 +8,5 @@ if(image_index == 1)
 {
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
-	draw_text(x, y+144, "Shooting costs shield power. Regain shield by destroying asteroids.");
+	draw_text(x, y+144, "REGENERATE SHIELDS BY HITTING ASTEROIDS.");
 }

@@ -1,5 +1,8 @@
 /// @description
 
+font = font_add_sprite_ext(spr_custom_font1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?.-():'", false, 0);
+draw_set_font(font);
+
 health_sprite = spr_health_1;
 score_sprite = spr_score;
 ring_sprite = spr_rings_collected;
@@ -41,7 +44,7 @@ if(room != rm_menu && room != rm_instructions && room != rm_credits && room != r
 	// Draw the score text
 	draw_set_halign(fa_right);
 	draw_set_valign(fa_middle);
-	draw_text_transformed(view_wport[0]-32, 36, string(global.playerScore), 1.4, 1.4, 0);
+	draw_text_transformed(view_wport[0]-32, 34, string(global.playerScore), 1.4, 1.4, 0);
 }
 
 // Draw the rings collected in the level
@@ -69,7 +72,7 @@ if(room = rm_upgrade_menu && global.gameCycles > 0)
 {
 	draw_set_halign(fa_right);
 	draw_set_valign(fa_middle);
-	draw_text(view_wport[0]-32, view_hport[0]-32, "Game cycles completed (difficulty level): " + string(global.gameCycles));
+	draw_text(view_wport[0]-32, view_hport[0]-32, "GAME CYCLES COMPLETED (DIFFICULTY LEVEL): " + string(global.gameCycles));
 }
 
 // Draw the 15 ring tracker during the low action stage
@@ -95,21 +98,21 @@ if(room = rm_instructions)
 {
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
-	draw_text(view_wport[0]/2, view_hport[0]/4+32, "Use your mouse to control the cursor and your Delta Fighter.");
-	draw_text(view_wport[0]/2, view_hport[0]/4+64, "Aim and click to shoot the asteroids.");
-	draw_text(view_wport[0]/2, view_hport[0]/4+96, "Shooting costs shield power.");
-	draw_text(view_wport[0]/2, view_hport[0]/4+128, "You can't go below 1 shield while shooting.");
-	draw_text(view_wport[0]/2, view_hport[0]/4+160, "Direct your ship through the rings to complete each level!");
+	draw_text(view_wport[0]/2, view_hport[0]/4+32, "USE YOUR MOUSE TO CONTROL THE CURSOR AND YOUR DELTA FIGHTER");
+	draw_text(view_wport[0]/2, view_hport[0]/4+64, "AIM AND CLICK TO SHOOT THE ASTEROIDS");
+	draw_text(view_wport[0]/2, view_hport[0]/4+96, "SHOOTING COSTS SHIELD POWER");
+	draw_text(view_wport[0]/2, view_hport[0]/4+128, "YOU CAN'T GO BELOW 1 SHIELD WHEN SHOOTING");
+	draw_text(view_wport[0]/2, view_hport[0]/4+160, "DIRECT YOUR SHIP THROUGH THE RINGS TO COMPLETE EACH LEVEL!");
 }
 
 if(room = rm_credits)
 {
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
-	draw_text(view_wport[0]/2, view_hport[0]/4+32, "Made by Jeremy Liau in 48 hours for Ludum Dare 44");
-	draw_text(view_wport[0]/2, view_hport[0]/4+64, "IDE: GameMaker Studio 2");
-	draw_text(view_wport[0]/2, view_hport[0]/4+96, "Sound: BFXR (www.bfxr.net)");
-	draw_text(view_wport[0]/2, view_hport[0]/4+128, "Particle Effects: Pixel Fx Designer by CodeManu");
+	draw_text(view_wport[0]/2, view_hport[0]/4+32, "MADE BY JEREMY LIAU IN 48 HOURS FOR LUDUM DARE 44");
+	draw_text(view_wport[0]/2, view_hport[0]/4+64, "IDE: GAME MAKER STUDIO 2");
+	draw_text(view_wport[0]/2, view_hport[0]/4+96, "SFX: BFXR");
+	draw_text(view_wport[0]/2, view_hport[0]/4+128, "PARTICLE EFFECTS: PIXEL FX DESIGNER BY CODEMANU");
 }
 
 // Tutorial - How to shoot (Wow, handholding these days, amiright?)
@@ -119,11 +122,11 @@ if(room = rm_flying && global.level == 0 && global.gameCycles == 0 && global.pla
 	draw_set_valign(fa_middle);
 	if(global.challenge)
 	{
-		draw_text(view_wport[0]/2, view_hport[0]-32, "Pro-tip: Don't miss.");
+		draw_text(view_wport[0]/2, view_hport[0]-32, "PRO-TIP: DON'T MISS.");
 	}
 	else
 	{
-		draw_text(view_wport[0]/2, view_hport[0]-32, "Aim with your mouse and left-click/SPACEBAR to shoot the asteroids!");
+		draw_text(view_wport[0]/2, view_hport[0]-32, "AIM WITH YOUR MOUSE AND LEFT-CLICK TO SHOOT!");
 	}
 }
 
@@ -134,11 +137,15 @@ if(room = rm_flying && global.level == 0 && global.gameCycles == 0 && global.pla
 	draw_set_valign(fa_middle);
 	if(global.zen)
 	{
-		draw_text(view_wport[0]/2, view_hport[0]-32, "Shields don't deplete in this mode!");
+		draw_text(view_wport[0]/2, view_hport[0]-32, "SHIELDS DON'T DEPLETE IN THIS MODE!");
+	}
+	else if(global.challenge)
+	{
+		draw_text(view_wport[0]/2, view_hport[0]-32, "SHOOTING COSTS SHIELD POWER. SHIELDS REGENERATE AFTER EACH LEVEL.");
 	}
 	else
 	{
-		draw_text(view_wport[0]/2, view_hport[0]-32, "Shooting costs shield power. Destroying asteroids regains shield.");
+		draw_text(view_wport[0]/2, view_hport[0]-32, "SHOOTING COSTS SHIELD POWER. DESTROY ASTROIDS TO REGENERATE SHIELD.");
 	}
 }
 
@@ -147,5 +154,5 @@ if(room = rm_flying && global.level == 0 && global.gameCycles == 0 && global.pla
 {
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
-	draw_text(view_wport[0]/2, view_hport[0]-32, "Fly your ship through the gold rings to advance the level!");
+	draw_text(view_wport[0]/2, view_hport[0]-32, "FLY YOUR SHIP THROUGH THE GOLD RINGS TO ADVANCE!");
 }

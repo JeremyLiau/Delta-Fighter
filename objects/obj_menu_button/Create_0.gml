@@ -1,3 +1,3 @@
 /// @description 
-text = "Return";
+text = "RETURN";
 image_speed = 0;

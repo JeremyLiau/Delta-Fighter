@@ -22,7 +22,18 @@ if(global.mouseEnable == true && (mouse_check_button_pressed(mb_left) || keyboar
 		}
 	}
 	instance_create_layer(x, y, "Player", obj_projectile);
-	if(global.shield > 1 && room = rm_flying && !global.zen)
+	if(global.challenge && global.shield == 1)
+	{
+		global.shield -=1;
+		instance_create_layer(x, y, "Instances", obj_explosion);
+		instance_create_layer(x, y, "Instances", obj_screenshake);
+		if(!global.mute)
+		{
+			audio_play_sound(sfx_damaged, 5, false);
+		}
+		exit;
+	}
+	else if(global.shield > 1 && room = rm_flying && !global.zen)
 	{
 		global.shield -= 1;
 	}

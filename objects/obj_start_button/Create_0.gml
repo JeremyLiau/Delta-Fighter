@@ -3,4 +3,4 @@
 // Inherit the parent event
 event_inherited();
 
-text = "Start Game";
+text = "START GAME";

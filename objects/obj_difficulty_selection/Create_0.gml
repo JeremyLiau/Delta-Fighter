@@ -1,3 +1,3 @@
 /// @description 
-text = "Play";
+text = "PLAY";
 image_speed = 0;

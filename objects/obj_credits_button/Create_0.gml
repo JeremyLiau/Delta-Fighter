@@ -1,3 +1,3 @@
 /// @description 
-text = "Credits";
+text = "CREDITS";
 image_speed = 0;

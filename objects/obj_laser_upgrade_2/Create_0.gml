@@ -2,5 +2,5 @@
 
 // Inherit the parent event
 event_inherited();
-text = "Increase the area of your laser... again!";
+text = "INCREASE YOUR LASERS AREA... AGAIN!";
 cost = 100;

@@ -8,5 +8,5 @@ if(image_index == 1)
 {
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_middle);
-	draw_text(x, y+192, "You can't lose. Play for fun!");
+	draw_text(x, y+192, "YOU CAN'T LOSE. PLAY FOR FUN!");
 }
