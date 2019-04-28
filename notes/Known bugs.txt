@@ -1,0 +1,8 @@
+- Mute button does not stay in "muted" sprite mode after death in muted mode.
+- Sometimes, asteroids will hit the player during the fade transition between rooms
+- Not exactly a bug, but the color of the cursor is too identical to some of the room backgrounds
+
+I'm sure there's more, but I'm way too tired to look for them.
+For whoever has this project, sorry that the code is as ugly as it is. I was aiming for speed, not elegance.
+I'll probably refactor it after the compo.
+~ JL
